@@ -21,8 +21,8 @@ Test / logBuffered := false
 lazy val root = (project in file("."))
   .settings(
     name := "scalautils",
-    scalaVersion := "2.13.6",
-    crossScalaVersions := Seq("2.11.12", "2.12.13", "2.13.6", "3.1.0"),
+    scalaVersion := "2.13.7",
+    crossScalaVersions := Seq("2.11.12", "2.12.13", "2.13.7", "3.1.0"),
     // Libraries
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.10" % "test",
     // Sonatype publishing repository
