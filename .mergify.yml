@@ -1,7 +1,7 @@
 pull_request_rules:
   - name: Automatic merge on approval and CI success
     conditions:
-      - "#approved-reviews-by>=1"
+      - label="Please Merge"
       - status-success=build
       - base=main
     actions:
