@@ -23,7 +23,7 @@ jobs:
 
     - uses: actions/setup-java@v3
       with:
-        distribution: 'adopt' # See 'Supported distributions' for available options
+        distribution: 'temurin' # See 'Supported distributions' for available options
         java-version: ${{ matrix.jvm }}
         cache: 'sbt'
 
@@ -36,7 +36,7 @@ jobs:
 
     - name: Run code coverage
       run: sbt clean coverage test coverageReport
-      if: startsWith(matrix.jvm, '1')
+      if: startsWith(matrix.jvm, '11')
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
@@ -51,10 +51,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Scala
-        uses: olafurpg/setup-scala@v13
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
-          java-version: adopt@1.11
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '11'
+          cache: 'sbt'
 
       - name: Import GPG key
         id: import_gpg
