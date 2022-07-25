@@ -25,18 +25,7 @@ jobs:
       with:
         distribution: 'adopt' # See 'Supported distributions' for available options
         java-version: ${{ matrix.jvm }}
-
-    - name: Get project SBT version
-      run: echo "SBT_VERSION=$(cat project/build.properties |cut -d= -f2)" >> $GITHUB_ENV
-      id: sbt-version
-
-    - name: Install SBT
-      uses: Jtalk/setup-sbt@v1
-      with:
-        version: ${{ env.SBT_VERSION }}
-
-    - name: Cache Scala
-      uses: coursier/cache-action@v6
+        cache: 'sbt'
 
     - name: Check Formatting
       run: sbt scalafmtCheckAll
