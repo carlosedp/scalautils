@@ -2,6 +2,8 @@
 
 A library adding some frequently used methods in Scala and Chisel development.
 
+If you are looking for the RISCVAssembler library, it has been moved to own lib at <https://github.com/carlosedp/riscvassembler>.
+
 For more information, check the [scaladoc](https://www.javadoc.io/doc/com.carlosedp/scalautils_2.13/latest/com/carlosedp/scalautils/index.html).
 
 
