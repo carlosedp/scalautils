@@ -1,9 +1,7 @@
 package com.carlosedp.scalautils
 
 object ObjectUtils {
-  implicit class StringWithPad(
-    s: String
-  ) {
+  implicit class StringWithPad(s: String) {
 
     /** Left-pads a string to a specified length with a specified character.
       * @param length
@@ -11,29 +9,20 @@ object ObjectUtils {
       * @param padChar
       *   The character to pad with.
       */
-    def padStr(
-      length:  Int,
-      padChar: Char
-    ): String =
+    def padStr(length: Int, padChar: Char): String =
       s.reverse.padTo(length, padChar).reverse
 
     /** Left-pads a string to a certain length with zero (mostly used for binary strings).
       * @param length
       *   The length to pad to.
       */
-    def padZero(
-      length: Int
-    ): String =
+    def padZero(length: Int): String =
       s.padStr(length, '0')
   }
 
   /** Number manipulation functions
     */
-  implicit class NumericManipulation[T: Numeric](
-    x: T
-  )(
-    implicit n: Numeric[T]
-  ) {
+  implicit class NumericManipulation[T: Numeric](x: T)(implicit n: Numeric[T]) {
 
     /** Truncates a number to 32-bit and returns a Long.
       * @return
@@ -46,9 +35,7 @@ object ObjectUtils {
     * @return
     *   The BigInt converted from the string.
     */
-  implicit class IntToBase(
-    digits: String
-  ) {
+  implicit class IntToBase(digits: String) {
 
     /** Convert a string in a specified base to a BigInt
       * @param b
@@ -56,9 +43,7 @@ object ObjectUtils {
       * @return
       *   The BigInt converted from the string.
       */
-    def base(
-      b: Int
-    ) = BigInt(digits, b)
+    def base(b: Int) = BigInt(digits, b)
 
     /** Convert a string to a base 2 (binary) BigInt
       * @param b
