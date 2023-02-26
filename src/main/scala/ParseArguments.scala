@@ -44,7 +44,10 @@ object ParseArguments {
     args:        Array[String],
     parameters:  List[String],
     paramFormat: String = "-"
-  ): (Map[String, String], Array[String]) = {
+  ): (
+    Map[String, String],
+    Array[String]
+  ) = {
     var params: Map[String, String] = Map()
     val remainingArgs = new ListBuffer[String]
     var lastKey       = ""
