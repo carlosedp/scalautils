@@ -40,7 +40,7 @@ jobs:
       if: startsWith(matrix.jvm, '11')
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       if: startsWith(matrix.jvm, '11')
 
   publish-snapshot:
