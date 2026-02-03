@@ -60,7 +60,7 @@ jobs:
           cache: 'sbt'
 
       - name: Cache packages
-        uses: coursier/cache-action@v6
+        uses: coursier/cache-action@v8
         id: coursier-cache
 
       - name: Import GPG key
